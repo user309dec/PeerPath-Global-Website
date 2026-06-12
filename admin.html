@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>后台记录 Back Office | PeerPath Global</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .rec { border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin-bottom:14px; background:#fff; }
+    .rec__head { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:4px; }
+    .rec__badge { background:var(--blue-50); color:var(--blue-600); font-weight:700; font-size:.82rem; padding:4px 10px; border-radius:999px; }
+    .rec__meta { color:var(--muted); font-size:.85rem; }
+    .rec__tbl { width:100%; border-collapse:collapse; margin-top:10px; }
+    .rec__tbl th { text-align:left; color:var(--muted); font-weight:600; font-size:.85rem; padding:5px 12px 5px 0; white-space:nowrap; vertical-align:top; width:1%; }
+    .rec__tbl td { padding:5px 0; font-size:.92rem; color:var(--ink); }
+    .toolbar { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:24px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand__mark">PP</span><span class="brand__text"><span class="brand__en">PeerPath Global</span><span class="brand__cn">后台记录 Back Office</span></span></a>
+      <div class="nav__cta"><a class="btn btn--ghost" href="index.html">返回网站</a></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container" style="max-width:900px">
+        <span class="eyebrow">内部工具 · Internal</span>
+        <h1>测验与咨询记录</h1>
+        <div class="notice" style="margin:16px 0 24px">
+          <strong>说明：</strong>此页面读取保存在<strong>当前浏览器</strong>本地（localStorage）的记录，方便早期试运营时快速查看学生资料和答案。要在多设备/团队间共享数据，请在 <code>js/config.js</code> 中配置 <code>submitEndpoint</code> 后端地址（如 Formspree、Google Apps Script 或自建 API），提交会同时发送到后端。
+        </div>
+
+        <div class="toolbar">
+          <button class="btn btn--ghost" id="refresh-btn">刷新</button>
+          <button class="btn btn--primary" id="export-btn">导出全部（JSON）</button>
+          <button class="btn btn--ghost" id="clear-btn">清除本地记录</button>
+        </div>
+
+        <h2>诊断测验提交 <span class="muted" style="font-size:1rem">（<span id="tests-count">0</span>）</span></h2>
+        <div id="tests" style="margin-bottom:40px"></div>
+
+        <h2>咨询预约 <span class="muted" style="font-size:1rem">（<span id="contacts-count">0</span>）</span></h2>
+        <div id="contacts"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

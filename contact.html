@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>联系我们 Contact | PeerPath Global 领途英语</title>
+  <meta name="description" content="添加 PeerPath Global 微信领取个性化诊断报告，或预约一次免费的初步咨询。我们主要通过微信与学生和家长沟通。">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="PeerPath Global 首页">
+        <span class="brand__mark">PP</span>
+        <span class="brand__text"><span class="brand__en">PeerPath Global</span><span class="brand__cn">领途英语</span></span>
+      </a>
+      <nav aria-label="主导航">
+        <ul class="nav__links">
+          <li><a href="index.html">首页 Home</a></li>
+          <li><a href="story.html">我们的故事</a></li>
+          <li><a href="programs.html">课程</a></li>
+          <li><a href="mentors.html">导师</a></li>
+          <li><a href="how-it-works.html">学习流程</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">联系我们</a></li>
+        </ul>
+      </nav>
+      <div class="nav__cta"><a class="btn btn--primary" href="placement-test.html">开始 TOEFL 诊断</a></div>
+      <button class="nav__toggle" aria-label="展开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Contact</span>
+        <h1>联系我们</h1>
+        <p>我们主要通过微信与学生和家长沟通。添加微信，领取你的个性化诊断报告，或预约一次免费的初步咨询。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <!-- WeChat / contact methods -->
+          <div>
+            <span class="eyebrow">添加微信 · 获取诊断报告</span>
+            <h2>扫码添加 PeerPath Global</h2>
+            <p class="lead">完成入学诊断后，添加微信即可领取由导师整理的个性化诊断报告，并预约初步咨询。</p>
+            <div class="form-card" style="text-align:center;max-width:320px">
+              <div class="qr"><img src="assets/wechat-qr.svg" alt="PeerPath Global 微信二维码"></div>
+              <p style="margin:0;font-weight:600;color:var(--navy-900)">微信号 WeChat ID</p>
+              <p style="margin:4px 0 0;font-size:1.2rem;font-weight:800;color:var(--blue-600)" data-wechat>PeerPathGlobal</p>
+              <p class="muted" style="font-size:.85rem;margin-top:8px">长按或扫描上方二维码添加</p>
+            </div>
+
+            <div style="margin-top:28px">
+              <div class="contact-method">
+                <div class="card__icon">💬</div>
+                <div><h3>微信咨询</h3><p>最快的沟通方式，适合解读诊断结果与课程咨询。微信号 <b data-wechat>PeerPathGlobal</b></p></div>
+              </div>
+              <div class="contact-method">
+                <div class="card__icon">✉️</div>
+                <div><h3>电子邮箱</h3><p><a data-email href="mailto:hello@peerpathglobal.com">hello@peerpathglobal.com</a></p></div>
+              </div>
+              <div class="contact-method">
+                <div class="card__icon">🎥</div>
+                <div><h3>视频咨询</h3><p>预约后，我们会通过视频通话向你和家长解读测验结果并推荐课程方案。</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Booking / consultation form -->
+          <div id="book">
+            <span class="eyebrow">预约初步咨询 · Book a Consultation</span>
+            <h2>留下联系方式，我们尽快联系你</h2>
+            <p class="lead">填写下面的表单预约一次免费的初步咨询。我们会通过微信或邮箱与你确认时间。</p>
+            <form class="form-card" id="contact-form" novalidate>
+              <div class="field">
+                <label>姓名 Name <span class="req">*</span></label>
+                <input type="text" name="name" required placeholder="你的姓名 / 家长姓名">
+                <div class="field__err">请填写姓名 Please enter your name</div>
+              </div>
+              <div class="field">
+                <label>微信号 或 邮箱 WeChat / Email <span class="req">*</span></label>
+                <input type="text" name="contact" required placeholder="方便我们联系你的微信号或邮箱">
+                <div class="field__err">请填写微信号或邮箱 Please provide a WeChat ID or email</div>
+              </div>
+              <div class="field">
+                <label>希望咨询的方向 Topic</label>
+                <select name="preferred">
+                  <option value="">请选择</option>
+                  <option>解读入学诊断结果</option>
+                  <option>了解课程方案</option>
+                  <option>TOEFL 备考规划</option>
+                  <option>大学英语过渡 / University Bridge</option>
+                  <option>其他 Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>想告诉我们的情况 Message</label>
+                <textarea name="message" placeholder="例如：目标分数、申请时间线、目前的英文情况或其他问题"></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--lg btn--block">提交预约 Submit</button>
+              <div class="notice hide" id="contact-status" style="margin-top:16px">
+                <strong>已收到你的预约！</strong>我们会尽快通过微信或邮箱与你联系。如需更快沟通，欢迎直接扫码添加微信。
+              </div>
+              <p class="muted" style="font-size:.82rem;margin:14px 0 0">你的信息仅用于安排咨询与课程建议，不会对外公开。</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint">
+      <div class="container">
+        <div class="cta-band">
+          <h2>还没做入学诊断？</h2>
+          <p>先完成一次 TOEFL 入学诊断，咨询会更有针对性，我们也能给出更准确的课程建议。</p>
+          <div class="hero__actions">
+            <a class="btn btn--light btn--lg" href="placement-test.html">开始 TOEFL 入学诊断</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html"><span class="brand__mark">PP</span><span class="brand__text"><span class="brand__en">PeerPath Global</span><span class="brand__cn">领途英语</span></span></a>
+          <p>由真实海外在校生带你完成从申请英语到大学英语的过渡。</p>
+        </div>
+        <div><h4>课程</h4><ul class="footer-links"><li><a href="programs.html">TOEFL Reading Diagnostic</a></li><li><a href="programs.html">TOEFL Core Program</a></li><li><a href="programs.html">Speaking Lab</a></li><li><a href="programs.html">University English Bridge</a></li></ul></div>
+        <div><h4>网站</h4><ul class="footer-links"><li><a href="story.html">我们的故事</a></li><li><a href="mentors.html">导师介绍</a></li><li><a href="how-it-works.html">学习流程</a></li><li><a href="faq.html">常见问题</a></li></ul></div>
+        <div><h4>开始</h4><ul class="footer-links"><li><a href="placement-test.html">TOEFL 入学诊断</a></li><li><a href="contact.html#book">预约咨询</a></li><li><a href="contact.html">添加微信</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> PeerPath Global 领途英语. 远程留学英语培训平台。</span>
+        <span>本网站提供的诊断测验为非官方练习评估，TOEFL 为 ETS 注册商标，与本平台无隶属关系。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
