@@ -1,22 +1,27 @@
-# PeerPath Global 领途英语 — Website (v1)
+# Astra 星途国际英语 — Website (v1)
 
-> 由真实海外在校生带你完成从申请英语到大学英语的过渡。
+> 由真实海外在校生带你点亮留学星途，完成从申请英语到大学英语的过渡。
 > A remote study-abroad English training platform for students preparing to study overseas.
 
-This repository contains the **first version** of the PeerPath Global website: a
+This repository contains the **first version** of the Astra 星途国际英语 website: a
 fast, fully static site (plain HTML / CSS / JavaScript — no build step, no
 framework) that runs anywhere. It implements brand pages, a working **TOEFL
 Reading placement test** with timer and auto-scoring, lead capture, and a simple
 back-office for reviewing submissions.
+
+Branding is centralized: the brand name, tagline, WeChat ID and email all live in
+`js/config.js`. `js/main.js` injects the brand fields into every element marked
+with `data-brand-en` / `data-brand-cn` / `data-brand-mark` / `data-tagline`, so a
+single edit updates the whole site.
 
 ## Pages
 
 | Page | File | Purpose |
 | --- | --- | --- |
 | 首页 Home | `index.html` | Brand slogan, value props, test entry, programs, flow, CTAs |
-| 我们的故事 Our Story | `story.html` | Founder background & why PeerPath was created |
+| 我们的故事 Our Story | `story.html` | Founder background & why Astra was created |
 | 入学诊断测验 Placement Test | `placement-test.html` | Student info form → timed TOEFL Reading test → result |
-| 课程 Programs | `programs.html` | TOEFL Reading Diagnostic, Core, Speaking Lab, Writing Review, University English Bridge |
+| 课程 Programs | `programs.html` | 托福阅读入学诊断, 托福全科核心课程, 口语实战实验室, 学术写作精修课, 大学英语衔接课程 (with audience, duration, outcomes & modules) |
 | 导师 Mentors | `mentors.html` | Overseas student mentor profiles & matching |
 | 学习流程 How It Works | `how-it-works.html` | Diagnose → consult → recommend → learn → weekly feedback |
 | 常见问题 FAQ | `faq.html` | Placement, official-test disclaimer, results, enrollment, payment |
@@ -44,12 +49,21 @@ POSTed to a backend endpoint. The team can review records at `admin.html`.
 Edit **`js/config.js`**:
 
 ```js
-window.PEERPATH_CONFIG = {
-  wechatId: "PeerPathGlobal",          // shown on Contact / result pages
-  email:    "hello@peerpathglobal.com",
+window.ASTRA_CONFIG = {
+  brandEn:   "Astra",                  // English brand name
+  brandCn:   "星途国际英语",            // Chinese brand name
+  brandFull: "Astra 星途国际英语",      // full brand (used in copy)
+  brandMark: "A",                      // logo monogram
+  tagline:   "由真实海外在校生带你点亮留学星途，完成从申请英语到大学英语的过渡。",
+  wechatId:  "AstraGlobal",            // TODO: replace with your real WeChat ID
+  email:     "hello@astraedu.com",     // TODO: replace with your real email
   submitEndpoint: ""                   // optional backend URL (see below)
 };
 ```
+
+> The contact details above (`wechatId` / `email`) are **placeholders** — update
+> them to your real account before going live. A backward-compatible
+> `window.PEERPATH_CONFIG` alias is kept so older references keep working.
 
 - **WeChat QR code** — replace `assets/wechat-qr.svg` with your real QR image
   (keep the same filename, or update the `<img src>` in `contact.html`).
@@ -97,4 +111,4 @@ mobile, accessible nav and forms. Tone is professional and trustworthy — no
 ## Disclaimer
 
 The placement test is an **unofficial practice assessment** for diagnostic use.
-TOEFL is a registered trademark of ETS; PeerPath Global is not affiliated with ETS.
+TOEFL is a registered trademark of ETS; Astra 星途国际英语 is not affiliated with ETS.

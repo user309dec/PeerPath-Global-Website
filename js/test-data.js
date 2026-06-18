@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PeerPath Global — TOEFL Reading Placement Test (Version 1)
+   Astra 星途国际英语 — TOEFL Reading Placement Test (Version 1)
    Two academic passages with single- and multiple-answer questions.
    All passages are original content written for diagnostic use.
    ========================================================================== */

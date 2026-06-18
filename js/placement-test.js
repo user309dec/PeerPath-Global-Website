@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PeerPath Global — Placement Test engine
+   Astra 星途国际英语 — Placement Test engine
    Steps: (1) student info form  ->  (2) timed reading test  ->  (3) result
    Records the submission locally (and to a backend endpoint if configured).
    ========================================================================== */
@@ -7,7 +7,7 @@
   "use strict";
 
   var TEST = window.PLACEMENT_TEST;
-  var CONFIG = window.PEERPATH_CONFIG || {};
+  var CONFIG = window.ASTRA_CONFIG || window.PEERPATH_CONFIG || {};
   if (!TEST) return;
 
   var els = {
@@ -223,23 +223,23 @@
   function levelFor(pct) {
     if (pct >= 85) return {
       key: "Advanced", cn: "高阶 · 接近大学阅读水平", color: "#16a34a", bg: "#dcfce7",
-      program: "University English Bridge",
-      advice: "你的学术阅读基础扎实，已接近海外大学课堂的阅读要求。建议进入 University English Bridge，重点训练 seminar 讨论、学术写作与高阶阅读策略。"
+      program: "University English Bridge 大学英语衔接课程",
+      advice: "你的学术阅读基础扎实，已接近海外大学课堂的阅读要求。建议进入「大学英语衔接课程 University English Bridge」，重点训练 seminar 讨论、学术写作与高阶阅读策略。"
     };
     if (pct >= 70) return {
       key: "Upper-Intermediate", cn: "中高阶", color: "#2563eb", bg: "#dbeafe",
-      program: "TOEFL Core Program",
-      advice: "你已具备较好的阅读理解能力，能处理大部分学术文本。建议进入 TOEFL Core Program 系统冲刺目标分数，并补强推断题与长难句逻辑。"
+      program: "TOEFL Core Program 托福全科核心课程",
+      advice: "你已具备较好的阅读理解能力，能处理大部分学术文本。建议进入「托福全科核心课程 TOEFL Core Program」系统冲刺目标分数，并补强推断题与长难句逻辑。"
     };
     if (pct >= 50) return {
       key: "Intermediate", cn: "中阶", color: "#d97706", bg: "#fef3c7",
-      program: "TOEFL Reading Diagnostic + Core",
-      advice: "你能理解文章主旨，但在学术词汇、细节定位与推断题上仍有提升空间。建议从 TOEFL Reading Diagnostic 起步，搭配 Core 课程稳步提升。"
+      program: "托福阅读入学诊断 + 托福全科核心课程",
+      advice: "你能理解文章主旨，但在学术词汇、细节定位与推断题上仍有提升空间。建议从「托福阅读入学诊断」起步，搭配「托福全科核心课程」稳步提升。"
     };
     return {
       key: "Foundational", cn: "基础", color: "#dc2626", bg: "#fee2e2",
-      program: "TOEFL Reading Diagnostic",
-      advice: "你正处于打基础的阶段，建议优先扩充学术词汇、训练句子逻辑与阅读理解策略。我们会为你制定循序渐进的学习计划，从 TOEFL Reading Diagnostic 开始。"
+      program: "TOEFL Reading Diagnostic 托福阅读入学诊断",
+      advice: "你正处于打基础的阶段，建议优先扩充学术词汇、训练句子逻辑与阅读理解策略。我们会为你制定循序渐进的学习计划，从「托福阅读入学诊断」开始。"
     };
   }
 
@@ -305,7 +305,7 @@
         '<div class="progressbar"><span style="width:' + sp + '%"></span></div></div>';
     }).join("");
 
-    var wechat = esc(CONFIG.wechatId || "PeerPathGlobal");
+    var wechat = esc(CONFIG.wechatId || "AstraGlobal");
 
     els.result.innerHTML =
       (timedOut ? '<div class="notice" style="margin-bottom:20px">⏱ 时间到，系统已自动提交你的答案。Time is up — your answers were submitted automatically.</div>' : '') +
@@ -347,7 +347,7 @@
     var a = document.createElement("a");
     var safe = (sub.student && sub.student.name ? sub.student.name : "student").replace(/[^\w一-龥-]/g, "_");
     a.href = url;
-    a.download = "PeerPath-Placement-" + safe + ".json";
+    a.download = "Astra-Placement-" + safe + ".json";
     a.click();
     URL.revokeObjectURL(url);
   }

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PeerPath Global 领途英语 — Design System
+   Astra 星途国际英语 — Design System
    Modern, clean, education-focused. Navy / blue / white palette.
    ========================================================================== */
 
@@ -208,6 +208,12 @@ p  { margin: 0 0 1rem; }
 .program p { color: var(--ink-soft); font-size: .96rem; }
 .program .checklist { margin: 6px 0 20px; }
 .program .btn { margin-top: auto; }
+.program__facts { display: grid; gap: 8px; margin: 14px 0 6px; padding: 14px 16px; background: var(--bg-tint); border-radius: 12px; }
+.program__facts > div { display: flex; gap: 10px; font-size: .9rem; color: var(--ink-soft); }
+.program__facts b { color: var(--navy-900); flex: none; min-width: 70px; font-weight: 700; }
+.program__sub { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--blue-600); margin: 18px 0 8px; font-weight: 700; }
+.program__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
+@media (max-width: 640px) { .program__cols { grid-template-columns: 1fr; } }
 
 /* Mentors ------------------------------------------------------------- */
 .mentor { text-align: left; }
