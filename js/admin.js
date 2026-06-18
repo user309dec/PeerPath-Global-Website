@@ -1,4 +1,4 @@
-/* PeerPath Global — lightweight back-office viewer (reads local records) */
+/* Astra 星途国际英语 — lightweight back-office viewer (reads local records) */
 (function () {
   "use strict";
 
@@ -66,7 +66,7 @@
     var blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
     var url = URL.createObjectURL(blob);
     var a = document.createElement("a");
-    a.href = url; a.download = "peerpath-records-" + new Date().toISOString().slice(0, 10) + ".json"; a.click();
+    a.href = url; a.download = "astra-records-" + new Date().toISOString().slice(0, 10) + ".json"; a.click();
     URL.revokeObjectURL(url);
   }
 

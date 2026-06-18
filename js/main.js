@@ -1,6 +1,19 @@
-/* PeerPath Global — shared site interactions */
+/* Astra 星途国际英语 — shared site interactions */
 (function () {
   "use strict";
+
+  // Sync brand fields from config so the whole site updates from one place.
+  var CFG = window.ASTRA_CONFIG || window.PEERPATH_CONFIG || {};
+  function applyBrand(attr, value) {
+    if (!value) return;
+    document.querySelectorAll("[" + attr + "]").forEach(function (el) {
+      el.textContent = value;
+    });
+  }
+  applyBrand("data-brand-en", CFG.brandEn);
+  applyBrand("data-brand-cn", CFG.brandCn);
+  applyBrand("data-brand-mark", CFG.brandMark);
+  applyBrand("data-tagline", CFG.tagline);
 
   // Mobile nav toggle
   var header = document.querySelector(".site-header");

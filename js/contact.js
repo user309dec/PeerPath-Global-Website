@@ -1,14 +1,14 @@
-/* PeerPath Global — contact form handling + config-driven contact details */
+/* Astra 星途国际英语 — contact form handling + config-driven contact details */
 (function () {
   "use strict";
-  var CONFIG = window.PEERPATH_CONFIG || {};
+  var CONFIG = window.ASTRA_CONFIG || window.PEERPATH_CONFIG || {};
 
   // Fill config-driven values (WeChat ID, email) wherever marked.
   document.querySelectorAll("[data-wechat]").forEach(function (el) {
-    el.textContent = CONFIG.wechatId || "PeerPathGlobal";
+    el.textContent = CONFIG.wechatId || "AstraGlobal";
   });
   document.querySelectorAll("[data-email]").forEach(function (el) {
-    var email = CONFIG.email || "hello@peerpathglobal.com";
+    var email = CONFIG.email || "hello@astraedu.com";
     if (el.tagName === "A") { el.href = "mailto:" + email; }
     el.textContent = email;
   });
