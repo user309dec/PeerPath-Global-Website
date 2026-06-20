@@ -98,7 +98,7 @@ The current `js/config.js` is already configured for:
 
 ```js
 submitEndpoint: "https://formsubmit.co/ajax/yc677liu@gmail.com",
-submitContentType: "application/json",
+submitContentType: "application/json;charset=UTF-8",
 submitBodyFormat: "json",
 submissionRecipientEmail: "yc677liu@gmail.com"
 ```
@@ -123,7 +123,7 @@ Formspree:
 
 ```js
 submitEndpoint: "https://formspree.io/f/YOUR_FORM_ID",
-submitContentType: "application/json",
+submitContentType: "application/json;charset=UTF-8",
 submitBodyFormat: "json",
 submissionRecipientEmail: "yc677liu@gmail.com"
 ```

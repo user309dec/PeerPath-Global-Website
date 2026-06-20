@@ -16,7 +16,7 @@ window.ASTRA_CONFIG = {
   // 当前使用 FormSubmit 免账号邮件端点；第一次提交后需在邮箱中点确认激活。
   submitEndpoint: "https://formsubmit.co/ajax/yc677liu@gmail.com",
   // 默认以 JSON body 发送；Google Apps Script 如遇 CORS 预检问题可改为 "text/plain;charset=utf-8"。
-  submitContentType: "application/json",
+  submitContentType: "application/json;charset=UTF-8",
   // 仅 Netlify Forms 需要：改为 "form" 后会把完整 JSON 放入 payload 字段提交。
   submitBodyFormat: "json",
   netlifyFormName: "astra-submissions",
