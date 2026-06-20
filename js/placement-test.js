@@ -251,8 +251,8 @@
     var level = levelFor(pct);
     var timeUsed = state.startedAt ? Math.round((Date.now() - state.startedAt) / 1000) : 0;
 
-    var submission = {
-      submittedAt: new Date().toISOString(),
+    var SUBMIT = window.ASTRA_SUBMISSIONS;
+    var submissionData = {
       student: state.student,
       responses: responses,
       score: { earned: score.earned, total: score.total, percent: pct, correct: score.correctCount, of: state.totalQuestions },
@@ -262,6 +262,9 @@
       timedOut: !!timedOut,
       testVersion: TEST.version
     };
+    var submission = SUBMIT ? SUBMIT.buildPayload("placement_test", submissionData) : submissionData;
+    if (!submission.type) submission.type = "placement_test";
+    if (!submission.submittedAt) submission.submittedAt = new Date().toISOString();
 
     saveSubmission(submission);
     renderResult(submission, level, pct, timeUsed, timedOut);
@@ -272,20 +275,28 @@
   }
 
   function saveSubmission(submission) {
+    var SUBMIT = window.ASTRA_SUBMISSIONS;
+
     // 1) Always keep a local copy so the team can review during early operation.
-    try {
-      var key = "peerpath_submissions";
-      var list = JSON.parse(localStorage.getItem(key) || "[]");
-      list.push(submission);
-      localStorage.setItem(key, JSON.stringify(list));
-    } catch (e) { /* storage may be unavailable */ }
+    if (SUBMIT) {
+      SUBMIT.saveLocal("peerpath_submissions", submission);
+    } else {
+      try {
+        var key = "peerpath_submissions";
+        var list = JSON.parse(localStorage.getItem(key) || "[]");
+        list.push(submission);
+        localStorage.setItem(key, JSON.stringify(list));
+      } catch (e) { /* storage may be unavailable */ }
+    }
 
     // 2) If a backend endpoint is configured, send it there too.
-    if (CONFIG.submitEndpoint) {
+    if (SUBMIT && SUBMIT.hasEndpoint()) {
+      SUBMIT.send(submission).catch(function () { /* non-blocking; student keeps result + download */ });
+    } else if (CONFIG.submitEndpoint) {
       try {
         fetch(CONFIG.submitEndpoint, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": CONFIG.submitContentType || "application/json" },
           body: JSON.stringify(submission)
         }).catch(function () { /* non-blocking */ });
       } catch (e) { /* ignore */ }
