@@ -104,10 +104,19 @@
                 <textarea name="message" placeholder="例如：目标分数、申请时间线、目前的英文情况或其他问题"></textarea>
               </div>
               <button type="submit" class="btn btn--primary btn--lg btn--block">提交预约 Submit</button>
-              <div class="notice hide" id="contact-status" style="margin-top:16px">
-                <strong>已收到你的预约！</strong>我们会尽快通过微信或邮箱与你联系。如需更快沟通，欢迎直接扫码添加微信。
+              <div class="notice hide" id="contact-status" role="status" aria-live="polite" style="margin-top:16px">
+                <strong>提交状态将在这里显示。</strong>
               </div>
               <p class="muted" style="font-size:.82rem;margin:14px 0 0">你的信息仅用于安排咨询与课程建议，不会对外公开。</p>
+            </form>
+            <form name="astra-submissions" data-netlify="true" hidden>
+              <input type="hidden" name="form-name" value="astra-submissions">
+              <input type="hidden" name="type">
+              <input type="hidden" name="submittedAt">
+              <input type="hidden" name="name">
+              <input type="hidden" name="contact">
+              <input type="hidden" name="recipientEmail">
+              <textarea name="payload"></textarea>
             </form>
           </div>
         </div>
@@ -146,6 +155,7 @@
   </footer>
 
   <script src="js/config.js"></script>
+  <script src="js/submissions.js"></script>
   <script src="js/contact.js"></script>
   <script src="js/main.js"></script>
 </body>
