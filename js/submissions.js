@@ -29,6 +29,7 @@
       type: type,
       _subject: "New Astra submission: " + type,
       _captcha: "false",
+      _url: window.location.href,
       submittedAt: new Date().toISOString(),
       site: CONFIG.brandFull || "Astra 星途国际英语",
       pageUrl: window.location.href,

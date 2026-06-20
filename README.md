@@ -97,7 +97,7 @@ then future submissions will arrive in the inbox.
 The current `js/config.js` is already configured for:
 
 ```js
-submitEndpoint: "https://formsubmit.co/ajax/yc677liu@gmail.com",
+submitEndpoint: "https://formsubmit.co/ajax/5eda6249c256d047d9d0f3702cb1219a",
 submitContentType: "application/json;charset=UTF-8",
 submitBodyFormat: "json",
 submissionRecipientEmail: "yc677liu@gmail.com"
